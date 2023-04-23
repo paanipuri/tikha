@@ -1,0 +1,46 @@
+Exp 6
+clc;
+clear;
+pin=100;
+pout=4;
+alphaT=10*log10(pin/pout);
+disp(" Overall attenuation(alphaT)=")
+disp(alphaT)
+L1=10*(10^(3));
+alpha=alphaT/10;
+disp("The signal attenuation per kilometer(alpha)=")
+disp(alpha)
+L2=20*(10^(3));
+TSA=alpha/(10^(3))*L2;
+disp("total signal attenuation=")
+disp(TSA)
+S=9;
+A=1.5;
+TAFS=S*A;
+disp("total attenuation from splices=")
+disp(TAFS)
+a=TAFS+TSA;
+disp("overall signal attenuation including attenuation due to splices=")
+disp(a)
+
+Exp 7
+clc ;
+clear ;
+n = 50/100; 
+lambda =0.9*(10^ -6) ;
+e =1.6*(10^-19) ;
+h =6.6*(10^-34) ;
+c =3*(10^8) ;
+R=(n*e* lambda )/(h*c);
+disp ("R= ")
+disp(R)
+Ip =10^-6;
+P0=Ip/R;
+disp ("Received optical power (P0 )=")
+disp(P0)
+E=(h*c)/( lambda );
+disp ("E= ")
+disp(E)
+NOP = P0/E;
+disp ("Number of photons= ")
+disp(NOP)
